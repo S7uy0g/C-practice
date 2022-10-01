@@ -1,0 +1,9 @@
+public class MySecondCode
+{
+    public static void Calculate()
+    {
+        float a=15;
+        System.Console.WriteLine("So percenatge="+a);
+        Console.Read();
+    }
+}

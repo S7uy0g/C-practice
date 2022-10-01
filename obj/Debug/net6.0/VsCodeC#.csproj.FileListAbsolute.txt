@@ -1,0 +1,15 @@
+C:\Users\User\Documents\VsCodeC#\bin\Debug\net6.0\VsCodeC#.exe
+C:\Users\User\Documents\VsCodeC#\bin\Debug\net6.0\VsCodeC#.deps.json
+C:\Users\User\Documents\VsCodeC#\bin\Debug\net6.0\VsCodeC#.runtimeconfig.json
+C:\Users\User\Documents\VsCodeC#\bin\Debug\net6.0\VsCodeC#.dll
+C:\Users\User\Documents\VsCodeC#\bin\Debug\net6.0\VsCodeC#.pdb
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.csproj.AssemblyReference.cache
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.AssemblyInfoInputs.cache
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.AssemblyInfo.cs
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.dll
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\refint\VsCodeC#.dll
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.pdb
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\VsCodeC#.genruntimeconfig.cache
+C:\Users\User\Documents\VsCodeC#\obj\Debug\net6.0\ref\VsCodeC#.dll
