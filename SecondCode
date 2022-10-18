@@ -1,9 +1,107 @@
-public class MySecondCode
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player_Movement : MonoBehaviour
 {
-    public static void Calculate()
+    [SerializeField]
+    private float moveForce=5f,jumpForce=10f;
+    private float movementX;
+    private Rigidbody2D myBody;
+    private SpriteRenderer sr;
+    private Animator anim;
+    private string Walk_Animation="Walk";
+    private string Jump_Animation="Jump";
+    private bool isGrounded;
+    private string Ground_Tag="Ground";
+    private void Awake() 
     {
-        float a=15;
-        System.Console.WriteLine("So percenatge="+a);
-        Console.Read();
+        myBody=GetComponent<Rigidbody2D>();
+        anim=GetComponent<Animator>();
+        sr=GetComponent<SpriteRenderer>();  
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        PlayerMoveKeyboard();
+        AnimatePlayerMove();
+        PlayerJumpKeyboard();
+        AnimateJumpMove();   
+    }
+    private void FixedUpdate() 
+    {  
+    }
+    void PlayerMoveKeyboard()
+    {
+        // movementX=Input.GetAxis("Horizontal");
+        // float v=Input.GetAxis("Vertical");
+        // Vector2 pos=transform.position;
+        // pos.x+=h*moveForce*Time.deltaTime;
+        // pos.y+=v*jumpForce
+        // *Time.deltaTime;
+        // transform.position=pos;
+        movementX=Input.GetAxisRaw("Horizontal");
+        transform.position+=new Vector3(movementX,0f,0f)*Time.deltaTime*moveForce;
+    }
+    void AnimatePlayerMove()
+    {
+        //we are going to right side
+        if(movementX>0)
+        {
+            anim.SetBool(Walk_Animation,true);
+            sr.flipX=false;
+        }
+        //we are going to left side
+        else if(movementX<0)
+        {
+            anim.SetBool(Walk_Animation,true);
+            sr.flipX=true;
+        }
+        else
+        {
+            anim.SetBool(Walk_Animation,false);
+        }
+    }
+    void PlayerJumpKeyboard()
+    {
+        //GetButton=returns true when button is held down
+        //GetButtonDown=returns true when button is pressed down
+        //GetButtonUp=returns true when button is released down
+        if(Input.GetButtonUp("Jump")&& isGrounded)
+        {
+            Debug.Log("Pressed");
+            isGrounded=false;
+            myBody.AddForce(new Vector2(0f,jumpForce),ForceMode2D.Impulse);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag(Ground_Tag))
+        {
+            isGrounded=true;
+        }
+    }
+    void AnimateJumpMove()
+    {
+        //we are going to right side
+        if(isGrounded==false)
+        {
+            anim.SetBool(Jump_Animation,true);
+        }
+        //we are going to left side
+        else if(isGrounded==true)
+        {
+            anim.SetBool(Jump_Animation,false);
+        }
+        else
+        {
+            anim.SetBool(Jump_Animation,false);
+        }
     }
 }
